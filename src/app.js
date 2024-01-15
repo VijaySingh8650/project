@@ -5,7 +5,7 @@ import TaskList from "./components/task-list";
 import styles from "./styles/app.module.css";
 import { DragDropContext} from "react-beautiful-dnd";
 
-const tasksName = ["Added Tasks", "Started Tasks", "Completed Tasks"];
+const tasksName = ["Added", "Started", "Completed"];
 
 const App = () => {
   const uniqueId = uuidv4();
@@ -44,28 +44,28 @@ const App = () => {
     newPlace
   ) => {
     let currentPlaceArr =
-      (currentPlace === "Added Tasks" && [...addedTasks]) ||
-      (currentPlace === "Started Tasks" && [...startedTasks]) ||
-      (currentPlace === "Completed Tasks" && [...completedTasks]);
+      (currentPlace === "Added" && [...addedTasks]) ||
+      (currentPlace === "Started" && [...startedTasks]) ||
+      (currentPlace === "Completed" && [...completedTasks]);
     let newPlaceArr =
-      (newPlace === "Added Tasks" && [...addedTasks]) ||
-      (newPlace === "Started Tasks" && [...startedTasks]) ||
-      (newPlace === "Completed Tasks" && [...completedTasks]);
+      (newPlace === "Added" && [...addedTasks]) ||
+      (newPlace === "Started" && [...startedTasks]) ||
+      (newPlace === "Completed" && [...completedTasks]);
     let removedItem = currentPlaceArr?.splice(currentIndex, 1);
     
     if (newPlace) {
       newPlaceArr.splice(newIndex, 0, removedItem?.[0]);
-      (newPlace === "Added Tasks" && setAddedTasks([...newPlaceArr])) ||
-        (newPlace === "Started Tasks" && setStartedTasks([...newPlaceArr])) ||
-        (newPlace === "Completed Tasks" && setCompletedTasks([...newPlaceArr]));
+      (newPlace === "Added" && setAddedTasks([...newPlaceArr])) ||
+        (newPlace === "Started" && setStartedTasks([...newPlaceArr])) ||
+        (newPlace === "Completed" && setCompletedTasks([...newPlaceArr]));
     } else {
       currentPlaceArr.splice(newIndex, 0, removedItem?.[0]);
     }
 
-    (currentPlace === "Added Tasks" && setAddedTasks([...currentPlaceArr])) ||
-      (currentPlace === "Started Tasks" &&
+    (currentPlace === "Added" && setAddedTasks([...currentPlaceArr])) ||
+      (currentPlace === "Started" &&
         setStartedTasks([...currentPlaceArr])) ||
-      (currentPlace === "Completed Tasks" &&
+      (currentPlace === "Completed" &&
         setCompletedTasks([...currentPlaceArr]));
   };
 
@@ -112,9 +112,9 @@ const App = () => {
               <TaskList
                 key={item}
                 tasks={
-                  (item === "Added Tasks" && addedTasks) ||
-                  (item === "Started Tasks" && startedTasks) ||
-                  (item === "Completed Tasks" && completedTasks)
+                  (item === "Added" && addedTasks) ||
+                  (item === "Started" && startedTasks) ||
+                  (item === "Completed" && completedTasks)
                 }
                 name={item}
                 onDragEnd={onDragEnd}
