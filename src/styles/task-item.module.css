@@ -1,0 +1,17 @@
+.textDiv{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: .5rem 0;
+    white-space: wrap;
+    color: white;
+    background-color: #6558f5;
+    width: 100%;
+    padding: .3rem .2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.textDiv > p{
+    font-size: 1rem;
+}

@@ -1,0 +1,61 @@
+.container{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.field{
+
+    height: 2rem;
+    width: 20vw;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #6558f5;
+    padding: 0 .5rem;
+}
+.field[placeholder]{
+
+    font-size: 1rem;
+
+
+}
+.btn{
+
+    background-color: #6558f5;
+    color: white;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: .3rem;
+    font-size: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    cursor: pointer;
+    transition: all .4s .1s linear;
+
+}
+
+.priority{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+
+}
+.priority > p{
+    font-size: 1.5rem;
+    color: #6558f5;
+}
+
+.priority label{
+    margin-left: .5rem;
+    font-size: 1.2rem;
+}
+
+.priority input[type="checkbox"]{
+    height: 15px;
+    width: 15px;
+}
